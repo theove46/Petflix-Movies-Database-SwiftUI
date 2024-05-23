@@ -136,7 +136,7 @@ struct HomeScreen: View {
                                                         VStack(alignment: .leading, spacing: 10) {
                                                             Button(action: {
                                                             }) {
-                                                                Text("Add to wishlist")
+                                                                Text("Add to Watchlist")
                                                                     .font(.system(size: 12))
                                                                     .foregroundColor(.white)
                                                                     .padding(.vertical, 12)

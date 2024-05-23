@@ -13,6 +13,7 @@ struct Movie: Identifiable {
     let details: String
     let posterURL: URL
     let ratings: Double
+    let yourRating: Double?
     let pg: String
     let releaseYear: Date
     let runTime: Double

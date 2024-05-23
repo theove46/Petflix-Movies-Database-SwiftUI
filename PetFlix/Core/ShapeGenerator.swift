@@ -75,3 +75,25 @@ struct VisualEffectBlur<Content: View>: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
 
+ func star(for rating: Double, at index: Int) -> some View {
+        let filled = rating / 2.0
+        if Double(index) < filled {
+            if Double(index + 1) > filled {
+                return AnyView(
+                    Image(systemName: "star.leadinghalf.filled")
+                        .foregroundColor(.yellow)
+                )
+            } else {
+                return AnyView(
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                )
+            }
+        } else {
+            return AnyView(
+                Image(systemName: "star.fill")
+                    .foregroundColor(.white)
+            )
+        }
+    }
+
