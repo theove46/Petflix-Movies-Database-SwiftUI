@@ -98,74 +98,59 @@ struct HomeScreen: View {
                                                     .padding(.leading, 10)
                                             }
                                             
+                                         
+
                                             // Descriptions
                                             VStack {
                                                 Spacer()
-                                                HStack {
-                                                    VStack(alignment: .leading, spacing: 4) {
-                                                        Text(movie.title)
-                                                            .font(.title3)
-                                                            .lineLimit(1)
-                                                            .foregroundColor(.white)
-                                                        
-                                                        Text("History Thriller Drama Mystery")
-                                                            .font(.caption)
-                                                            .foregroundColor(.white)
-                                                        
-                                                        HStack {
-                                                            roundedInfoBox(text: movie.releaseYearString)
-                                                            roundedInfoBox(text: movie.pg)
-                                                            roundedInfoBox(text: movie.runtimeString)
-                                                        }
-                                                        
-                                                    }
-                                                    .padding(.leading, 16)
-                                                    
-                                                    Spacer()
-                                                    
-                                                    // Wishlist Button
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        Button(action: {
-                                                        }) {
-                                                            Text("Add to wishlist")
-                                                                .font(.system(size: 12))
+                                                
+                                                ZStack {
+                                                    VStack {}.padding(.vertical, 16)
+                                                        .frame(width: geometry.size.width, height: 100)
+                                                        .background(.ultraThinMaterial, in:
+                                                                        RoundedCorner(radius: 10, corners: [.bottomLeft, .bottomRight]))
+                                                        .opacity(0.5)
+                                                    HStack {
+                                                        VStack(alignment: .leading, spacing: 4) {
+                                                            Text(movie.title)
+                                                                .font(.title3)
+                                                                .lineLimit(1)
                                                                 .foregroundColor(.white)
-                                                                .padding(.vertical, 12)
-                                                                .padding(.horizontal, 12)
-                                                                .background(Color.purple)
-                                                                .cornerRadius(10)
+                                                            
+                                                            Text("History Thriller Drama Mystery")
+                                                                .font(.caption)
+                                                                .foregroundColor(.white)
+                                                            
+                                                            HStack {
+                                                                roundedInfoBox(text: movie.releaseYearString)
+                                                                roundedInfoBox(text: movie.pg)
+                                                                roundedInfoBox(text: movie.runtimeString)
+                                                            }
                                                             
                                                         }
-                                                        .padding(.trailing, 16)
+                                                        .padding(.leading, 16)
                                                         
-                                                
+                                                        Spacer()
+                                                        
+                                                        // Wishlist Button
+                                                        VStack(alignment: .leading, spacing: 10) {
+                                                            Button(action: {
+                                                            }) {
+                                                                Text("Add to wishlist")
+                                                                    .font(.system(size: 12))
+                                                                    .foregroundColor(.white)
+                                                                    .padding(.vertical, 12)
+                                                                    .padding(.horizontal, 12)
+                                                                    .background(Color.purple)
+                                                                    .cornerRadius(10)
+                                                                
+                                                            }
+                                                            .padding(.trailing, 16)
+                                                            
+                                                            
+                                                        }
                                                     }
                                                 }
-                                                .padding(.vertical, 16)
-                                                //                                            .background(
-                                                //                                                VisualEffectBlur(effect: .systemMaterial) {
-                                                //
-                                                //                                                    Rectangle()
-                                                //                                                        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
-                                                //                                                        .edgesIgnoringSafeArea(.all)
-                                                //
-                                                //                                                        .foregroundColor(Color.white.opacity(0.2))
-                                                //                                                        .overlay(Rectangle().frame(width: nil, height: 1, alignment: .top).foregroundColor(Color.white), alignment: .top)
-                                                //                                                }
-                                                //                                            )
-                                                .background(
-                                                    Rectangle()
-                                                        .cornerRadius(10, corners: [.bottomLeft, .bottomRight])
-                                                        .edgesIgnoringSafeArea(.all)
-                                                    
-                                                        .foregroundColor(Color.white.opacity(0.2))
-                                                        .overlay(Rectangle().frame(width: nil, height: 1, alignment: .top).foregroundColor(Color.white), alignment: .top)
-                                                    
-                                                    
-                                                    
-                                                )
-                                                
-                                                
                                                 
                                             }
                                             
@@ -176,12 +161,7 @@ struct HomeScreen: View {
                                     .frame(width: UIScreen.main.bounds.width - 32)
                                 }
                                 .tag(index)
-                                
                             }
-                            
-                            
-                            
-                            
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         .frame(height: 250)
